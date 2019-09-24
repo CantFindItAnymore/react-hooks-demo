@@ -4,6 +4,7 @@ import MouseChange from './components/UseEffect/index'
 import DogGallery from './components/ControlEffect/index'
 import useMouseChange from './hooks/useMouseChange'
 import useUrlLoader from './hooks/useUrlLoader'
+import UseRef from './components/UseRef'
 
 const DogGalleryWithHook = () => {
   const [ res, loading ] = useUrlLoader('https://dog.ceo/api/breeds/image/random')
@@ -44,27 +45,31 @@ function App() {
   const position = useMouseChange()
   return (
     <div className="App">
-      <p>
+      <p className='title'>
         1. useState
       </p>
       <LikeButton />
-      <p>
+      <p className='title'>
         2. useEffect
       </p>
       <MouseChange />
-      <p>
+      <p className='title'>
         3. 控制useEffect
       </p>
       <DogGallery />
       <DogGalleryWithHook />
       <CatGalleryWithHook />
-      <p>
+      <p className='title'>
         4. 自定义hooks
       </p>
       <p>
         X: { position.x }<br/>
         Y: { position.y }
       </p>
+      <p className='title'>
+        5. useRef
+      </p>
+      <UseRef/>
     </div>
   );
 }
