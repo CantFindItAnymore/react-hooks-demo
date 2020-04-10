@@ -4,25 +4,25 @@
 import { useState, useEffect } from 'react'
 
 const useMouseChange = () => {
-  useEffect(() => {
-    console.log('useEffect -- do something')
-  })
+  // useEffect(() => {
+  //   console.log('useEffect -- do something')
+  // })
 
-  const [ position, setPosition ] = useState({x: 0, y: 0})
+  const [ movePosition, setMovePosition ] = useState({x: 0, y: 0})
   useEffect(() => {
-    const mouseUpdated = (e) => {
-      console.log('订阅监听器')
-      setPosition({ x: e.clientX, y: e.clientY })
+    const mouseMoveUpdated = (e) => {
+      // console.log('订阅监听器')
+      setMovePosition({ x: e.clientX, y: e.clientY })
     }
 
-    document.addEventListener('mousemove', mouseUpdated)
+    document.addEventListener('mousemove', mouseMoveUpdated)
     return () => {
-      console.log('移除监听器')
-      document.removeEventListener('mousemove', mouseUpdated)
+      // console.log('移除监听器')
+      document.removeEventListener('mousemove', mouseMoveUpdated)
     }
   })
 
-  return position
+  return movePosition
 }
 
 export default useMouseChange
