@@ -3,7 +3,7 @@ import 'rjx-ui'
 
 const LikeButton = () => {
   // useState用于在函数组件中添加和管理状态
-  // useStete之间互不相干，但一个useState中的多个state必须同步更新 ↓
+  // useStete之间互不相干，但一个useState中的多个state必须同步更新，因为hook中的state总是替换 ↓
 
   // 1.
   // const [ like, setLike ] = useState(0)

@@ -29,7 +29,7 @@ const MouseChange = () => {
 
     document.addEventListener('click', mouseClickUpdated)
     // 清除副作用函数
-    // useEffect的return函数在组件卸载时执行(可以理解为class中触发render时) ↓
+    // useEffect的return函数在组件卸载时执行(可以理解为class中触发componentWillUnmount时) ↓
     return () => {
       console.log('移除监听器')
       document.removeEventListener('click', mouseClickUpdated)
